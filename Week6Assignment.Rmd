@@ -2,14 +2,15 @@
 title: "Week6Assignment"
 author: "Ashwin Thota"
 date: "June 18, 2017"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 
 ```{r}
 # read csv file
 bk <- read.csv("https://raw.githubusercontent.com/AshwinThotaDS/Week6/master/Data/rollingsales_statenisland.csv",skip=4,header=TRUE)
-bk
 ```
 
 ```{r}
@@ -36,7 +37,6 @@ names(bk) <- tolower(names(bk)) # make all variable names lower case
 bk$gross.sqft <- as.numeric(gsub("[^[:digit:]]","", bk$gross.square.feet))
 bk$land.sqft <- as.numeric(gsub("[^[:digit:]]","", bk$land.square.feet))
 bk$year.built <- as.numeric(as.character(bk$year.built))
-bk
 ```
 
 ```{r}
